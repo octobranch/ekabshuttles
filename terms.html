@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eKab - Términos y Condiciones | Transporte Privado LOCAL</title>
-    <meta name="description" content="Términos y Condiciones de eKab Transporte Privado LOCAL. Conoce las condiciones de uso de nuestros servicios de transporte LOCAL.">
-    <meta name="keywords" content="transporte local cancún, términos condiciones ekab, transporte aeropuerto cancún, suv local cancún">
+    <meta name="description" content="Términos y Condiciones de eKab Transporte Privado LOCAL. Conoce las condiciones de uso de nuestro servicio de transporte.">
+    <meta name="keywords" content="términos transporte cancún, condiciones eKab, transporte local cancún, traslado aeropuerto cancún">
     <meta name="author" content="eKab Transporte Privado">
     
     <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚕</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -52,10 +52,9 @@
             min-height: 100vh;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3, h4 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            margin-bottom: 0.75rem;
         }
 
         /* Header */
@@ -96,6 +95,27 @@
         .logo i {
             color: var(--local-color);
         }
+        
+        /* Navbar Links */
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            padding: 0.5rem 0.2rem;
+            border-bottom: 2px solid transparent;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+        }
 
         .nav-right {
             display: flex;
@@ -131,6 +151,69 @@
             transform: translate(3px, 3px);
             box-shadow: var(--shadow-hover);
         }
+        
+        /* Mobile menu toggle */
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: var(--border-thickness) solid var(--black);
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--black);
+            padding: 0.5rem 0.75rem;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+        
+        .nav-toggle:hover {
+            background: var(--black);
+            color: var(--white);
+            transform: translate(3px, 3px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            z-index: 999;
+            border-bottom: var(--border-thickness) solid var(--black);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .mobile-menu.active {
+            max-height: 400px;
+        }
+        
+        .mobile-links {
+            display: flex;
+            flex-direction: column;
+            padding: 1.5rem;
+        }
+        
+        .mobile-links a {
+            padding: 1rem 0;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 600;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .mobile-links a:hover {
+            color: var(--primary-color);
+            background: rgba(255, 59, 63, 0.1);
+            padding-left: 10px;
+        }
 
         /* Main Content */
         .legal-container {
@@ -162,8 +245,6 @@
         .legal-content {
             background: var(--white);
             padding: 3rem;
-            transition: var(--transition);
-            position: relative;
             border: var(--border-thickness) solid var(--black);
             box-shadow: var(--shadow);
         }
@@ -171,7 +252,7 @@
         .legal-section {
             margin-bottom: 2.5rem;
             padding-bottom: 2rem;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 2px solid var(--black);
         }
 
         .legal-section:last-child {
@@ -181,7 +262,7 @@
         .legal-section h2 {
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: var(--primary-dark);
+            color: var(--text-dark);
             display: flex;
             align-items: center;
             gap: 0.75rem;
@@ -223,7 +304,8 @@
             position: absolute;
             left: 0;
             color: var(--local-color);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            top: -0.3rem;
         }
 
         .back-btn {
@@ -234,7 +316,7 @@
             color: var(--white);
             padding: 0.8rem 1.5rem;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 600;
             transition: var(--transition);
             margin-top: 1rem;
             border: var(--border-thickness) solid var(--black);
@@ -363,26 +445,48 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
+            .nav-links {
+                gap: 1.2rem;
+            }
+            
             .legal-title {
                 font-size: 2.5rem;
             }
         }
         
-        @media (max-width: 768px) {
-            .legal-container {
-                margin-top: 6rem;
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .nav-toggle {
+                display: block;
+            }
+            
+            .mobile-menu {
+                display: block;
             }
             
             .legal-title {
                 font-size: 2.25rem;
             }
-            
-            .legal-content {
-                padding: 2rem 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .legal-container {
+                margin: 6rem auto 2rem;
             }
             
-            .legal-section h2, .legal-section h3 {
+            .legal-content {
+                padding: 2rem;
+            }
+            
+            .legal-section h2 {
                 font-size: 1.5rem;
+            }
+            
+            .legal-section h3 {
+                font-size: 1.3rem;
             }
             
             .legal-section p {
@@ -405,40 +509,47 @@
                 height: 55px;
                 font-size: 1.5rem;
             }
+            
+            /* Mobile menu icon and language toggle */
+            .nav-right {
+                gap: 0.75rem;
+            }
+            
+            .language-toggle {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .lang-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.9rem;
+            }
         }
         
         @media (max-width: 480px) {
             .legal-container {
-                margin-top: 5.5rem;
+                margin: 5rem auto 1.5rem;
+                padding: 0 1rem;
             }
             
             .legal-title {
                 font-size: 1.8rem;
             }
             
+            .legal-content {
+                padding: 1.5rem;
+            }
+            
             .legal-section h2 {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
             
             .legal-section h3 {
+                font-size: 1.15rem;
+            }
+            
+            .footer-section h4 {
                 font-size: 1.2rem;
-            }
-            
-            .legal-section p, .legal-section li {
-                font-size: 0.95rem;
-            }
-            
-            .nav {
-                padding: 0 1rem;
-            }
-            
-            .logo {
-                font-size: 1.5rem;
-            }
-            
-            .lang-btn {
-                padding: 0.4rem 0.8rem;
-                font-size: 0.9rem;
             }
         }
     </style>
@@ -451,13 +562,40 @@
                 <i class="fas fa-taxi"></i>
                 eKab
             </a>
+            
+            <div class="nav-links">
+                <a href="index.html#vehicles" data-es="Vehículos" data-en="Vehicles">Vehículos</a>
+                <a href="index.html#routes" data-es="Rutas" data-en="Routes">Rutas</a>
+                <a href="index.html#how-it-works" data-es="Cómo funciona" data-en="How it works">Cómo funciona</a>
+                <a href="index.html#benefits" data-es="Ventajas" data-en="Benefits">Ventajas</a>
+                <a href="index.html#testimonials" data-es="Testimonios" data-en="Testimonials">Testimonios</a>
+                <a href="index.html#faq" data-es="Preguntas" data-en="FAQ">Preguntas</a>
+            </div>
+            
             <div class="nav-right">
                 <div class="language-toggle">
                     <button class="lang-btn active" onclick="switchLanguage('es')">ES</button>
                     <button class="lang-btn" onclick="switchLanguage('en')">EN</button>
                 </div>
+                
+                <button class="nav-toggle" id="navToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </nav>
+        
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-links">
+                <a href="index.html#vehicles"><i class="fas fa-shuttle-van"></i> <span data-es="Vehículos" data-en="Vehicles">Vehículos</span></a>
+                <a href="index.html#routes"><i class="fas fa-route"></i> <span data-es="Rutas" data-en="Routes">Rutas</span></a>
+                <a href="index.html#how-it-works"><i class="fas fa-cogs"></i> <span data-es="Cómo funciona" data-en="How it works">Cómo funciona</span></a>
+                <a href="index.html#benefits"><i class="fas fa-star"></i> <span data-es="Ventajas" data-en="Benefits">Ventajas</span></a>
+                <a href="index.html#testimonials"><i class="fas fa-comments"></i> <span data-es="Testimonios" data-en="Testimonials">Testimonios</span></a>
+                <a href="index.html#faq"><i class="fas fa-question-circle"></i> <span data-es="Preguntas" data-en="FAQ">Preguntas</span></a>
+                <a href="privacy.html"><i class="fas fa-shield-alt"></i> <span data-es="Privacidad" data-en="Privacy">Privacidad</span></a>
+                <a href="terms.html"><i class="fas fa-file-alt"></i> <span data-es="Términos" data-en="Terms">Términos</span></a>
+            </div>
+        </div>
     </header>
 
     <!-- Legal Content - Términos y Condiciones -->
@@ -467,83 +605,81 @@
         <div class="legal-content">
             <div class="legal-section">
                 <h2><i class="fas fa-file-contract"></i> <span data-es="Aceptación de los Términos" data-en="Acceptance of Terms">Aceptación de los Términos</span></h2>
-                <p data-es="Al utilizar nuestros servicios, usted acepta estar sujeto a estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos términos, no debe utilizar nuestros servicios." data-en="By using our services, you agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, you should not use our services.">
-                    Al utilizar nuestros servicios, usted acepta estar sujeto a estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos términos, no debe utilizar nuestros servicios.
+                <p data-es="Al utilizar nuestros servicios de transporte LOCAL, usted acepta estos términos y condiciones en su totalidad. Si no está de acuerdo con alguna parte de estos términos, no debe utilizar nuestros servicios." data-en="By using our LOCAL transportation services, you fully accept these terms and conditions. If you disagree with any part of these terms, you should not use our services.">
+                    Al utilizar nuestros servicios de transporte LOCAL, usted acepta estos términos y condiciones en su totalidad. Si no está de acuerdo con alguna parte de estos términos, no debe utilizar nuestros servicios.
                 </p>
             </div>
             
             <div class="legal-section">
-                <h2><i class="fas fa-taxi"></i> <span data-es="Descripción del Servicio" data-en="Service Description">Descripción del Servicio</span></h2>
-                <p data-es="eKab proporciona servicios de transporte privado LOCAL desde el Aeropuerto de Cancún hacia diversos destinos en Quintana Roo y Yucatán. Los servicios incluyen traslados en SUV LOCAL, vans para 8 pasajeros y vans para 15 pasajeros." data-en="eKab provides LOCAL private transportation services from Cancun Airport to various destinations in Quintana Roo and Yucatan. Services include transfers in LOCAL SUV, vans for 8 passengers, and vans for 15 passengers.">
-                    eKab proporciona servicios de transporte privado LOCAL desde el Aeropuerto de Cancún hacia diversos destinos en Quintana Roo y Yucatán. Los servicios incluyen traslados en SUV LOCAL, vans para 8 pasajeros y vans para 15 pasajeros.
+                <h2><i class="fas fa-calendar-check"></i> <span data-es="Reservas y Pagos" data-en="Bookings and Payments">Reservas y Pagos</span></h2>
+                <p data-es="Para reservar nuestro servicio de transporte LOCAL, debe proporcionar información precisa y completa. El pago se realiza mediante transferencia bancaria, tarjeta de crédito/débito o efectivo al conductor." data-en="To book our LOCAL transportation service, you must provide accurate and complete information. Payment is made by bank transfer, credit/debit card, or cash to the driver.">
+                    Para reservar nuestro servicio de transporte LOCAL, debe proporcionar información precisa y completa. El pago se realiza mediante transferencia bancaria, tarjeta de crédito/débito o efectivo al conductor.
+                </p>
+                
+                <h3 data-es="Confirmación de Reserva" data-en="Booking Confirmation">Confirmación de Reserva</h3>
+                <p data-es="Su reserva se confirmará una vez recibido el pago o comprobante de pago. Recibirá un correo electrónico o mensaje de WhatsApp con los detalles de su reserva." data-en="Your booking will be confirmed once payment or proof of payment is received. You will receive an email or WhatsApp message with your booking details.">
+                    Su reserva se confirmará una vez recibido el pago o comprobante de pago. Recibirá un correo electrónico o mensaje de WhatsApp con los detalles de su reserva.
                 </p>
             </div>
             
             <div class="legal-section">
-                <h2><i class="fab fa-whatsapp"></i> <span data-es="Reservas y Pagos" data-en="Bookings and Payments">Reservas y Pagos</span></h2>
-                <ul>
-                    <li data-es="Las reservas se realizan exclusivamente a través de WhatsApp." data-en="Bookings are made exclusively through WhatsApp.">
-                        <strong data-es="Reservas:" data-en="Bookings:">Reservas:</strong> Las reservas se realizan exclusivamente a través de WhatsApp.
-                    </li>
-                    <li data-es="El pago se realiza mediante transferencia bancaria o en efectivo al conductor." data-en="Payment is made by bank transfer or cash to the driver.">
-                        <strong data-es="Pagos:" data-en="Payments:">Pagos:</strong> El pago se realiza mediante transferencia bancaria o en efectivo al conductor.
-                    </li>
-                    <li data-es="Se requiere confirmación de pago para garantizar la reserva." data-en="Payment confirmation is required to guarantee the booking.">
-                        <strong data-es="Confirmación:" data-en="Confirmation:">Confirmación:</strong> Se requiere confirmación de pago para garantizar la reserva.
-                    </li>
-                    <li data-es="Precios LOCAL: Los servicios en SUV LOCAL tienen un recargo del 25% sobre las tarifas estándar." data-en="LOCAL Prices: SUV LOCAL services have a 25% surcharge over standard rates.">
-                        <strong data-es="Precios LOCAL:" data-en="LOCAL Prices:">Precios LOCAL:</strong> Los servicios en SUV LOCAL tienen un recargo del 25% sobre las tarifas estándar.
-                    </li>
-                </ul>
+                <h2><i class="fas fa-ban"></i> <span data-es="Cancelaciones y Reembolsos" data-en="Cancellations and Refunds">Cancelaciones y Reembolsos</span></h2>
+                <p data-es="Puede cancelar su reserva con al menos 24 horas de anticipación para recibir un reembolso completo. Las cancelaciones con menos de 24 horas no son reembolsables." data-en="You may cancel your reservation with at least 24 hours notice for a full refund. Cancellations with less than 24 hours notice are non-refundable.">
+                    Puede cancelar su reserva con al menos 24 horas de anticipación para recibir un reembolso completo. Las cancelaciones con menos de 24 horas no son reembolsables.
+                </p>
+                
+                <h3 data-es="Cancelaciones por eKab" data-en="Cancellations by eKab">Cancelaciones por eKab</h3>
+                <p data-es="Nos reservamos el derecho de cancelar servicios debido a condiciones climáticas adversas, problemas mecánicos o situaciones de fuerza mayor. En tales casos, ofreceremos un reembolso completo o reprogramación." data-en="We reserve the right to cancel services due to adverse weather conditions, mechanical problems, or force majeure. In such cases, we will offer a full refund or rescheduling.">
+                    Nos reservamos el derecho de cancelar servicios debido a condiciones climáticas adversas, problemas mecánicos o situaciones de fuerza mayor. En tales casos, ofreceremos un reembolso completo o reprogramación.
+                </p>
             </div>
             
             <div class="legal-section">
-                <h2><i class="fas fa-ban"></i> <span data-es="Política de Cancelación" data-en="Cancellation Policy">Política de Cancelación</span></h2>
+                <h2><i class="fas fa-user-check"></i> <span data-es="Responsabilidades del Usuario" data-en="User Responsibilities">Responsabilidades del Usuario</span></h2>
                 <ul>
-                    <li data-es="Cancelaciones con más de 24 horas de anticipación: Reembolso completo." data-en="Cancellations more than 24 hours in advance: Full refund.">
-                        Cancelaciones con más de 24 horas de anticipación: Reembolso completo.
-                    </li>
-                    <li data-es="Cancelaciones con menos de 24 horas: Retención del 20% del pago." data-en="Cancellations less than 24 hours in advance: 20% of payment retained.">
-                        Cancelaciones con menos de 24 horas: Retención del 20% del pago.
-                    </li>
-                    <li data-es="No shows: No reembolsable." data-en="No shows: Non-refundable.">
-                        No shows: No reembolsable.
-                    </li>
-                    <li data-es="Servicios LOCAL: Cancelaciones requieren 48 horas para reembolso completo." data-en="LOCAL Services: Cancellations require 48 hours for full refund.">
-                        Servicios LOCAL: Cancelaciones requieren 48 horas para reembolso completo.
-                    </li>
-                </ul>
-            </div>
-            
-            <div class="legal-section">
-                <h2><i class="fas fa-user-tie"></i> <span data-es="Responsabilidades del Cliente" data-en="Customer Responsibilities">Responsabilidades del Cliente</span></h2>
-                <ul>
-                    <li data-es="Proporcionar información precisa de vuelo y contacto." data-en="Provide accurate flight and contact information.">
-                        Proporcionar información precisa de vuelo y contacto.
-                    </li>
-                    <li data-es="Estar en el punto de encuentro a la hora acordada." data-en="Be at the meeting point at the agreed time.">
-                        Estar en el punto de encuentro a la hora acordada.
-                    </li>
-                    <li data-es="Informar sobre cambios en los planes de viaje con la mayor anticipación posible." data-en="Inform about travel plan changes as soon as possible.">
-                        Informar sobre cambios en los planes de viaje con la mayor anticipación posible.
-                    </li>
-                    <li data-es="Servicios LOCAL: Confirmar preferencias de snacks y bebidas con 24 horas de anticipación." data-en="LOCAL Services: Confirm snack and beverage preferences 24 hours in advance.">
-                        Servicios LOCAL: Confirmar preferencias de snacks y bebidas con 24 horas de anticipación.
-                    </li>
+                    <li data-es="Proporcionar información precisa sobre vuelos, horarios y lugares de recogida" data-en="Provide accurate information about flights, schedules and pickup locations">Proporcionar información precisa sobre vuelos, horarios y lugares de recogida</li>
+                    <li data-es="Estar listo para la recogida en el lugar y hora acordados" data-en="Be ready for pickup at the agreed place and time">Estar listo para la recogida en el lugar y hora acordados</li>
+                    <li data-es="Informar sobre cualquier cambio con al menos 2 horas de anticipación" data-en="Report any changes at least 2 hours in advance">Informar sobre cualquier cambio con al menos 2 horas de anticipación</li>
+                    <li data-es="Respetar a nuestros conductores y vehículos" data-en="Respect our drivers and vehicles">Respetar a nuestros conductores y vehículos</li>
+                    <li data-es="No fumar ni consumir bebidas alcohólicas en nuestros vehículos" data-en="No smoking or consuming alcoholic beverages in our vehicles">No fumar ni consumir bebidas alcohólicas en nuestros vehículos</li>
                 </ul>
             </div>
             
             <div class="legal-section">
                 <h2><i class="fas fa-exclamation-triangle"></i> <span data-es="Limitación de Responsabilidad" data-en="Limitation of Liability">Limitación de Responsabilidad</span></h2>
-                <p data-es="eKab no será responsable por retrasos o incumplimientos causados por circunstancias fuera de nuestro control razonable, tales como condiciones climáticas adversas, accidentes de tráfico, problemas mecánicos, o eventos de fuerza mayor." data-en="eKab shall not be liable for delays or failures caused by circumstances beyond our reasonable control, such as adverse weather conditions, traffic accidents, mechanical problems, or force majeure events.">
-                    eKab no será responsable por retrasos o incumplimientos causados por circunstancias fuera de nuestro control razonable, tales como condiciones climáticas adversas, accidentes de tráfico, problemas mecánicos, o eventos de fuerza mayor.
+                <p data-es="eKab Transporte Privado LOCAL no será responsable por retrasos o incumplimientos causados por eventos fuera de nuestro control razonable, como condiciones climáticas adversas, accidentes de tráfico o eventos de fuerza mayor." data-en="eKab Private LOCAL Transport will not be liable for delays or failures caused by events beyond our reasonable control, such as adverse weather conditions, traffic accidents, or force majeure events.">
+                    eKab Transporte Privado LOCAL no será responsable por retrasos o incumplimientos causados por eventos fuera de nuestro control razonable, como condiciones climáticas adversas, accidentes de tráfico o eventos de fuerza mayor.
+                </p>
+                
+                <h3 data-es="Objetos Personales" data-en="Personal Items">Objetos Personales</h3>
+                <p data-es="Los pasajeros son responsables de sus objetos personales. eKab no se hace responsable por objetos perdidos o dejados en nuestros vehículos." data-en="Passengers are responsible for their personal items. eKab is not responsible for lost or left items in our vehicles.">
+                    Los pasajeros son responsables de sus objetos personales. eKab no se hace responsable por objetos perdidos o dejados en nuestros vehículos.
                 </p>
             </div>
             
             <div class="legal-section">
-                <h2><i class="fas fa-edit"></i> <span data-es="Cambios en los Términos" data-en="Changes to Terms">Cambios en los Términos</span></h2>
-                <p data-es="Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Las versiones actualizadas serán publicadas en nuestro sitio web." data-en="We reserve the right to modify these Terms and Conditions at any time. Updated versions will be published on our website.">
-                    Nos reservamos el derecho de modificar estos Términos y Condiciones en cualquier momento. Las versiones actualizadas serán publicadas en nuestro sitio web.
+                <h2><i class="fas fa-car"></i> <span data-es="Uso de Vehículos" data-en="Vehicle Use">Uso de Vehículos</span></h2>
+                <p data-es="Nuestros vehículos están clasificados según capacidad de pasajeros y equipaje. Es responsabilidad del usuario reservar el vehículo adecuado para sus necesidades." data-en="Our vehicles are classified according to passenger and luggage capacity. It is the user's responsibility to book the appropriate vehicle for their needs.">
+                    Nuestros vehículos están clasificados según capacidad de pasajeros y equipaje. Es responsabilidad del usuario reservar el vehículo adecuado para sus necesidades.
+                </p>
+                
+                <h3 data-es="Capacidad Máxima" data-en="Maximum Capacity">Capacidad Máxima</h3>
+                <p data-es="Por razones de seguridad, no se permite exceder la capacidad máxima de pasajeros especificada para cada vehículo." data-en="For safety reasons, exceeding the specified maximum passenger capacity for each vehicle is not permitted.">
+                    Por razones de seguridad, no se permite exceder la capacidad máxima de pasajeros especificada para cada vehículo.
+                </p>
+            </div>
+            
+            <div class="legal-section">
+                <h2><i class="fas fa-sync-alt"></i> <span data-es="Modificaciones de los Términos" data-en="Changes to Terms">Modificaciones de los Términos</span></h2>
+                <p data-es="Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Las versiones actualizadas estarán disponibles en nuestro sitio web." data-en="We reserve the right to modify these terms and conditions at any time. Updated versions will be available on our website.">
+                    Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Las versiones actualizadas estarán disponibles en nuestro sitio web.
+                </p>
+            </div>
+            
+            <div class="legal-section">
+                <h2><i class="fas fa-balance-scale"></i> <span data-es="Ley Aplicable" data-en="Governing Law">Ley Aplicable</span></h2>
+                <p data-es="Estos términos y condiciones se rigen por las leyes de México. Cualquier disputa relacionada con nuestros servicios se resolverá en los tribunales de Cancún, Quintana Roo." data-en="These terms and conditions are governed by the laws of Mexico. Any dispute related to our services will be resolved in the courts of Cancun, Quintana Roo.">
+                    Estos términos y condiciones se rigen por las leyes de México. Cualquier disputa relacionada con nuestros servicios se resolverá en los tribunales de Cancún, Quintana Roo.
                 </p>
             </div>
             
@@ -583,6 +719,9 @@
                     </a>
                     <a href="https://www.instagram.com/ekabtransporte" class="social-link" aria-label="Instagram eKab">
                         <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/ekabtransporte" class="social-link" aria-label="Twitter eKab">
+                        <i class="fab fa-twitter"></i>
                     </a>
                 </div>
             </div>
@@ -645,6 +784,21 @@
                 ? 'eKab - Términos y Condiciones | Transporte Privado LOCAL' 
                 : 'eKab - Terms and Conditions | LOCAL Private Transport';
         }
+        
+        // Mobile menu toggle
+        const navToggle = document.getElementById('navToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        navToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            
+            // Change icon based on menu state
+            if (mobileMenu.classList.contains('active')) {
+                navToggle.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                navToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
         
         // Initialize page
         document.addEventListener('DOMContentLoaded', function() {
